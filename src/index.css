@@ -44,3 +44,8 @@ header nav a.active{
     background: var(--primary);
 }
 
+main{
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
