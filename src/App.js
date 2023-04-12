@@ -8,6 +8,7 @@ import {
 
 import Home from './pages/Home';
 import Create from './pages/create'
+import MySchedules from "./pages/MySchedules";
 
 import './index.css';
 
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
     <Route path = "/" element = {<RootLayout/>}>
          <Route index element= {<Home />} />
          <Route path="create" element= {<Create />} />
+         <Route path="MySchedules" element= {<MySchedules />} />
     </Route>
     )
 )
