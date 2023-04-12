@@ -49,3 +49,29 @@ main{
     margin: 40px auto;
 }
 
+.create h2{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.create label{
+    display:block; 
+}
+
+.create input, select, textarea{
+    font-family: "Poppins";
+    color: black;
+    padding: 6px 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    display: block;
+}
+
+.create button{
+    background: #A84448;
+    border: 0;
+    padding: 8px;
+    border-radius:8px;
+    cursor: pointer;
+}
+
