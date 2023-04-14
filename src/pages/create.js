@@ -15,19 +15,32 @@ export default function Create(){
        }
 
     useEffect(()=>{
-        fetch('http://localhost:8000/step')
+        fetch('http://localhost:8000/steps')
         .then(res=> {
             return res.json();
         })
         .then(data =>{
-
+            setSteps(data)
         })
     }, []);
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        const step = {title, description, addOn, image}
+        
+        fetch('http://localhost:8000/steps',{
+            method:'POST',
+            headers:{"Content-Type":"application/json"},
+            body: JSON.stringify(step)
+        }).then(()=>{
+            console.log("new blog added")
+        })
+    }
 
     return(
         <div className="create">
             <h2>Create a New Schedule</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
             <label>Step Title: </label>  
             <input 
               type="text"
@@ -54,12 +67,18 @@ export default function Create(){
             type="file" 
             onChange={onImageChange} 
             className="filetype" />
-            </form>
             <button>Add Step</button>
-            <p>{title}</p>
-            <p>{description}</p>
-            <p>{addOn}</p>
-            <img alt="preview image" src={image}/>
+            </form>
+            <div>
+                {steps && steps.map((step)=>(
+                    <div className="schedule-preview" key ={step.id}>
+                        <h2>{step.title}</h2>
+                        <p>{step.description}</p>
+                        <p>{step.addOn}</p>
+                        <img alt="preview image" src={step.image}/>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
