@@ -1,18 +1,5 @@
 {
   "steps": [
-    {
-      "title": "adfad",
-      "description": "adfadf",
-      "addOn": "timer",
-      "image": "blob:http://localhost:3000/97644c52-fcce-42fe-b823-14ac26b2595b",
-      "id": 1
-    },
-    {
-      "title": "New",
-      "description": "new",
-      "addOn": "timer",
-      "image": "blob:http://localhost:3000/9751d17d-86f6-4152-82a9-4fa6eeaf2aff",
-      "id": 2
-    }
+    
   ]
 }

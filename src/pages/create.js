@@ -63,12 +63,15 @@ export default function Create(){
                 <option value = "timer">timer</option>
                 <option value = "tokens">tokens</option>
             </select>
+            <label>Picture URL</label>
             <input 
-            type="file" 
-            onChange={onImageChange} 
-            className="filetype" />
+            type="text"
+            required
+            value = {image}
+            onChange = {(event)=> setImage(event.target.value)} />
             <button>Add Step</button>
             </form>
+            <img alt="preview image" src={image}/>
             <div>
                 {steps && steps.map((step)=>(
                     <div className="schedule-preview" key ={step.id}>
