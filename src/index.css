@@ -55,7 +55,7 @@ main{
 }
 
 .create label{
-    display:block; 
+    display:flex; 
 }
 
 .create input, select, textarea{
@@ -64,7 +64,7 @@ main{
     padding: 6px 10px;
     margin: 10px 0;
     box-sizing: border-box;
-    display: block;
+    display: flex;
 }
 
 .create button{
@@ -74,3 +74,19 @@ main{
     border-radius:8px;
     cursor: pointer;
 }
+
+.schedule-preview {
+    display:flex;
+    box-shadow:10px 10px;
+    background: var(--primary);
+    color: black;
+    padding: 6px 10px;
+    margin: 20px 0;
+    justify-content: space-between;
+}
+
+.schedule-preview img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }

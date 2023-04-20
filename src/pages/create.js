@@ -71,14 +71,13 @@ export default function Create(){
             onChange = {(event)=> setImage(event.target.value)} />
             <button>Add Step</button>
             </form>
-            <img alt="preview image" src={image}/>
-            <div>
+            <div className = "stepsPreview">
                 {steps && steps.map((step)=>(
                     <div className="schedule-preview" key ={step.id}>
+                         <img alt="preview image" src={step.image}/>
                         <h2>{step.title}</h2>
                         <p>{step.description}</p>
                         <p>{step.addOn}</p>
-                        <img alt="preview image" src={step.image}/>
                     </div>
                 ))}
             </div>
