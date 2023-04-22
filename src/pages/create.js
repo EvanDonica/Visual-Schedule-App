@@ -8,11 +8,11 @@ export default function Create(){
     const [addOn, setAddOn] = useState('')
     const [image, setImage] = useState()
 
-    const onImageChange = (event) => {
-        if (event.target.files && event.target.files[0]) {
-          setImage(URL.createObjectURL(event.target.files[0]));
-        }
-       }
+    // const onImageChange = (event) => {
+    //     if (event.target.files && event.target.files[0]) {
+    //       setImage(URL.createObjectURL(event.target.files[0]));
+    //     }
+    //    }
 
     useEffect(()=>{
         fetch('http://localhost:8000/steps')
@@ -36,6 +36,9 @@ export default function Create(){
             console.log("new blog added")
         })
     }
+    function refreshPage() {
+        window.location.reload(false);
+      }
 
     return(
         <div className="create">
@@ -69,8 +72,9 @@ export default function Create(){
             required
             value = {image}
             onChange = {(event)=> setImage(event.target.value)} />
-            <button>Add Step</button>
+            <button onClick={refreshPage}>Add Step</button>
             </form>
+            <h2>Schedule Preview</h2>
             <div className = "stepsPreview">
                 {steps && steps.map((step)=>(
                     <div className="schedule-preview" key ={step.id}>
